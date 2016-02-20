@@ -20,17 +20,26 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        TwitterClient.sharedInstance.homeTimelineWithCompletion(nil, completion: { (tweets, error) -> () in
-            self.tweets = tweets
-//            
-//            for tweet in tweets!{
-//            print(tweet)}
-            
-                })
+        getTimelineTweets()
 
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    func getTimelineTweets(){
+        TwitterClient.sharedInstance.homeTimelineWithCompletion(nil, completion: { (tweets, error) -> () in
+        self.tweets = tweets
+        self.tableView.reloadData()
+    //
+    //            for tweet in tweets!{
+    //            print(tweet)}
+    
+    })
+        
+    }
+
 
     @IBAction func onLogout(sender: AnyObject) {
     
@@ -38,7 +47,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = Tweet.tweetsTimeline?.count {
+        if let count = self.tweets?.count   { //Tweet.tweetsTimeline?.count {
             print (count)
             return count
             
@@ -54,13 +63,13 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         // print(Tweet.tweetsTimeline![indexPath.row])
-        print(Tweet.tweetsTimeline?.first)
+        //print(Tweet.tweetsTimeline?.first)
         // cell.tweetTextLabel.text =  (self.tweets![indexPath.row].text!) ?? "" //as? String
         //self.tweets!.[indexPath.row][tweet]["text"] as? String
         // cell.favouritedLabel = Tweet.[indexpath.row
         // [indexPath.row]["title"] as? String
-        cell.tweet = Tweet.tweetsTimeline![indexPath.row]
-        print(Tweet.tweetsTimeline![indexPath.row])
+        cell.tweet = self.tweets![indexPath.row] //Tweet.tweetsTimeline![indexPath.row]
+        //print(Tweet.tweetsTimeline![indexPath.row])
         return cell
         
 }
