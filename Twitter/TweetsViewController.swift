@@ -59,4 +59,27 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! TweetCell
+        let indexPath = tableView.indexPathForCell(cell)
+       var tweet = tweets[indexPath!.row]
+        var vc = segue.destinationViewController as! TweetDetailsViewController
+       // var vc = nvc.topViewController as! TweetDetailsViewController
+        cell.tweet = self.tweets[indexPath!.row]
+        print(cell.tweet)
+       // println("setting tweet on segue")
+        vc.tweet = tweet
+  //      print(tweet!)
+      //  let TweetsDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
+       // movieDetailViewController.movie = movie
+     
+        
+        
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
+    
 }
