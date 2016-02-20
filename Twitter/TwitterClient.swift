@@ -44,6 +44,22 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     }
     
+    func homeTimelineWithCompletion(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ())
+        {
+            
+            GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask?, response: AnyObject?) -> Void in
+                print("success!")
+                var tweets = Tweet.TweetsWithArray(response as! [NSDictionary])
+                Tweet.tweetsTimeline = tweets
+                print(Tweet.tweetsTimeline)
+                completion(tweets: tweets, error: nil)
+            
+                }) { (operation: NSURLSessionDataTask?, error: NSError?) -> Void in
+                    print("fail")
+                completion(tweets: nil, error: error)
+            }
+    }
+    
     func openURL (url: NSURL) {
             TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential (queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
             print("Got access token")
@@ -60,18 +76,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             }
             
             
-            TwitterClient.sharedInstance.GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (operation: NSURLSessionDataTask?, response: AnyObject?) -> Void in
-                print("success!")
-                
-                var tweets = Tweet.TweetsWithArray(response as! [NSDictionary])
-                for tweet in tweets
-                {
-                    print("text: \(tweet.text)")
-                }
-                
-                }) { (operation: NSURLSessionDataTask?, error: NSError?) -> Void in
-                    print("fail")
-            }
+           
             
             //            TwitterClient.sharedInstance.GET( "1.1/statues/home_timeline.json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
             //                print("user: \(response)")
