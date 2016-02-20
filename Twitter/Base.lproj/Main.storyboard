@@ -29,7 +29,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="r1n-kV-ZuZ"/>
                     <connections>
-                        <segue destination="Ttf-mb-c4L" kind="modal" identifier="loginSegue" id="GMA-Ko-Yki"/>
+                        <segue destination="kPt-iy-Bnv" kind="modal" identifier="loginSegue" id="GMA-Ko-Yki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,29 +48,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CL1-6F-8F7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="b3N-Je-x2e">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ihO-5s-x5K">
-                                            <connections>
-                                                <action selector="onLogout:" destination="Ttf-mb-c4L" id="9eL-DA-zio"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Compose" id="wAQ-LT-BnF">
-                                            <connections>
-                                                <segue destination="rSt-Hb-u4N" kind="modal" id="jjM-Pg-Fok"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-MF-iQ4">
                                 <rect key="frame" x="0.0" y="44" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="97" id="xak-Yw-RMZ" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="97"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xak-Yw-RMZ" id="gxR-Ap-KBX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
@@ -138,13 +121,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xed-09-0Ut">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="5WA-1o-ZTd">
+                            <connections>
+                                <action selector="onLogout:" destination="Ttf-mb-c4L" id="37u-tL-ebF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="UlQ-MF-iQ4" id="Qtx-0K-yOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yy3-j3-pfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="287"/>
+            <point key="canvasLocation" x="3202" y="287"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nRx-Cx-buM">
@@ -171,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="599-Ld-J5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="288"/>
+            <point key="canvasLocation" x="3546" y="288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLd-q5-WFb">
@@ -190,6 +180,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOG-DJ-nbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gKV-DI-4yL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kPt-iy-Bnv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G0d-GE-5Ii">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ttf-mb-c4L" kind="relationship" relationship="rootViewController" id="Fhg-Fh-eaG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbO-DW-d6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2670" y="287"/>
         </scene>
     </scenes>
 </document>
