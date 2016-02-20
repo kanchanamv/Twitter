@@ -14,7 +14,7 @@ let userDidLoginNotification = "userDidLoginNotification"
 let userDidLogoutNotification = "userDidLogoutNotification"
 
 class User: NSObject {
-
+    
     var name:String?
     var Screenname:String?
     var profileImageUrl:String?
@@ -24,10 +24,9 @@ class User: NSObject {
     init(dictionary: NSDictionary){
         self.dictionary = dictionary
         name = dictionary["name"] as? String
-        Screenname = dictionary["screen_name"] as? String
-        profileImageUrl = dictionary["profle_image_url"] as? String
+        Screenname = "@\(dictionary["screen_name"] as! String)"
+        profileImageUrl = dictionary["profile_image_url"] as? String
         tagline = dictionary["description"] as? String
-
         
     }
     
@@ -36,10 +35,10 @@ class User: NSObject {
         get {
         
         if _currentUser == nil
-        {
+    {
         var data = NSUserDefaults.standardUserDefaults().objectForKey(currentUserKey) as? NSData
         if data != nil
-        {  do {
+    {  do {
         let dictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
         _currentUser = User(dictionary: dictionary)
     } catch {
@@ -48,33 +47,33 @@ class User: NSObject {
         
         return _currentUser
         }
-      //  var dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: 0)
+        //  var dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: 0)
         }
         
         return _currentUser
         }
         set(user){
-        _currentUser = user
-        
-        if _currentUser != nil
-        {
-           // var data = NSJSONSerialization.dataWithJSONObject(obj: user!.dictionary, options: 0)
-            do {
-                let data = try NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: []) as NSData
-                NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
-            } catch {
-                print("JSON error")
+            _currentUser = user
+            
+            if _currentUser != nil
+            {
+                // var data = NSJSONSerialization.dataWithJSONObject(obj: user!.dictionary, options: 0)
+                do {
+                    let data = try NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: []) as NSData
+                    NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
+                } catch {
+                    print("JSON error")
+                }
+                // var data = NSJSONSerialization.dataWithJSONObject(<#T##obj: AnyObject##AnyObject#>, options: <#T##NSJSONWritingOptions#>)
+                //   NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
+                
             }
-       // var data = NSJSONSerialization.dataWithJSONObject(<#T##obj: AnyObject##AnyObject#>, options: <#T##NSJSONWritingOptions#>)
-     //   NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
-        
-        }
-        else
-        {
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: currentUserKey)
-        }
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
+            else
+            {
+                NSUserDefaults.standardUserDefaults().setObject(nil, forKey: currentUserKey)
+            }
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
         }
         
     }

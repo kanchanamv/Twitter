@@ -47,15 +47,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-MF-iQ4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-MF-iQ4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="129" id="xak-Yw-RMZ" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="129"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="104" id="xak-Yw-RMZ" customClass="TweetCell" customModule="Twitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xak-Yw-RMZ" id="gxR-Ap-KBX">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tweet Text Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozr-Q7-TH7">
@@ -71,13 +71,7 @@
                                                         <constraint firstAttribute="height" constant="74" id="VR2-2D-6t1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@kanch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1w-gt-uGu">
-                                                    <rect key="frame" x="189" y="8" width="66" height="19"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kanchana Vivek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEb-bi-54f">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" misplaced="YES" text="Kanchana Vivek" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEb-bi-54f">
                                                     <rect key="frame" x="84" y="8" width="103" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -101,8 +95,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl1-iK-afw">
-                                                    <rect key="frame" x="249" y="8" width="63" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="7h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl1-iK-afw">
+                                                    <rect key="frame" x="286" y="8" width="26" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@kanch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1w-gt-uGu">
+                                                    <rect key="frame" x="212" y="8" width="66" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -110,17 +110,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="tIB-ra-Qgs" secondAttribute="bottom" constant="8" id="1Ch-fk-3zN"/>
-                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="R1w-gt-uGu" secondAttribute="bottom" constant="1" id="1zI-Y7-OGk"/>
+                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="R1w-gt-uGu" secondAttribute="bottom" constant="3" id="1zI-Y7-OGk"/>
                                                 <constraint firstItem="uQN-IX-hQg" firstAttribute="top" secondItem="gxR-Ap-KBX" secondAttribute="top" constant="8" id="39s-rg-pfg"/>
                                                 <constraint firstItem="Gl1-iK-afw" firstAttribute="top" secondItem="gxR-Ap-KBX" secondAttribute="top" constant="8" id="3aI-HA-OoC"/>
                                                 <constraint firstItem="ozr-Q7-TH7" firstAttribute="leading" secondItem="uQN-IX-hQg" secondAttribute="trailing" constant="8" id="4Ki-eP-Icb"/>
-                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="Gl1-iK-afw" secondAttribute="bottom" constant="5" id="5uH-eh-EHU"/>
+                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="Gl1-iK-afw" secondAttribute="bottom" constant="7" id="5uH-eh-EHU"/>
                                                 <constraint firstAttribute="bottom" secondItem="uQN-IX-hQg" secondAttribute="bottom" constant="25" id="8fC-DL-QPr"/>
                                                 <constraint firstItem="M0P-SS-zPZ" firstAttribute="leading" secondItem="uQN-IX-hQg" secondAttribute="trailing" constant="8" id="AHX-ic-MqK"/>
                                                 <constraint firstItem="M0P-SS-zPZ" firstAttribute="leading" secondItem="uQN-IX-hQg" secondAttribute="trailing" constant="8" id="APt-yI-UhM"/>
                                                 <constraint firstItem="R1w-gt-uGu" firstAttribute="top" secondItem="gxR-Ap-KBX" secondAttribute="top" constant="8" id="Erk-qK-aw0"/>
                                                 <constraint firstItem="uQN-IX-hQg" firstAttribute="leading" secondItem="gxR-Ap-KBX" secondAttribute="leading" constant="8" id="HgI-PX-Suf"/>
-                                                <constraint firstItem="Gl1-iK-afw" firstAttribute="leading" secondItem="R1w-gt-uGu" secondAttribute="trailing" constant="15" id="LpU-MT-qhg"/>
+                                                <constraint firstItem="Gl1-iK-afw" firstAttribute="leading" secondItem="R1w-gt-uGu" secondAttribute="trailing" constant="8" id="LpU-MT-qhg"/>
                                                 <constraint firstItem="DEb-bi-54f" firstAttribute="leading" secondItem="uQN-IX-hQg" secondAttribute="trailing" constant="8" id="Lzb-hd-Zyp"/>
                                                 <constraint firstAttribute="bottom" secondItem="M0P-SS-zPZ" secondAttribute="bottom" constant="8" id="RUG-Mo-684"/>
                                                 <constraint firstItem="tIB-ra-Qgs" firstAttribute="leading" secondItem="M0P-SS-zPZ" secondAttribute="trailing" constant="41" id="TqY-5w-Nsf"/>
@@ -131,11 +131,17 @@
                                                 <constraint firstItem="M0P-SS-zPZ" firstAttribute="top" secondItem="ozr-Q7-TH7" secondAttribute="bottom" constant="1" id="nLZ-hZ-dVc"/>
                                                 <constraint firstItem="UfL-GT-DyA" firstAttribute="top" secondItem="ozr-Q7-TH7" secondAttribute="bottom" constant="1" id="pSC-fV-uaR"/>
                                                 <constraint firstItem="DEb-bi-54f" firstAttribute="top" secondItem="gxR-Ap-KBX" secondAttribute="top" constant="8" id="vtA-23-yL1"/>
-                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="R1w-gt-uGu" secondAttribute="bottom" constant="1" id="zew-sB-tIw"/>
-                                                <constraint firstItem="R1w-gt-uGu" firstAttribute="leading" secondItem="DEb-bi-54f" secondAttribute="trailing" constant="2" id="zqY-K8-d2Y"/>
+                                                <constraint firstItem="ozr-Q7-TH7" firstAttribute="top" secondItem="R1w-gt-uGu" secondAttribute="bottom" constant="3" id="zew-sB-tIw"/>
+                                                <constraint firstItem="R1w-gt-uGu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DEb-bi-54f" secondAttribute="trailing" constant="2" id="zqY-K8-d2Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favourited" destination="UfL-GT-DyA" id="loU-pR-nwp"/>
+                                            <outlet property="handleLabel" destination="R1w-gt-uGu" id="NgL-gt-Qo3"/>
+                                            <outlet property="nameLabel" destination="DEb-bi-54f" id="GPs-Xe-hBz"/>
+                                            <outlet property="profileImageview" destination="uQN-IX-hQg" id="sND-lY-yUI"/>
+                                            <outlet property="reTweeted" destination="tIB-ra-Qgs" id="sqI-Hn-eph"/>
+                                            <outlet property="timestampLabel" destination="Gl1-iK-afw" id="sec-CP-cVy"/>
                                             <outlet property="tweetTextLabel" destination="ozr-Q7-TH7" id="xmK-KJ-zBM"/>
                                         </connections>
                                     </tableViewCell>

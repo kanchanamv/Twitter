@@ -7,35 +7,45 @@
 //
 
 import UIKit
+import AFNetworking
 
 class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var favourited: UILabel!
+    @IBOutlet weak var reTweeted: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var profileImageview: UIImageView!
    // @IBOutlet weak var favouritedLabel: UILabel!
     
     var tweet: Tweet? {
         didSet {
             tweetTextLabel.text = tweet?.text
             
-//            let timestamp = tweet?.createdAt!
-//            timestampLabel.text = timeAgoSinceDate(timestamp!)
-//            
-//            if tweet?.user != nil {
-//                tweetUserLabel.text = "@\(tweet!.user!.screenName!)"
-//                profileImageView.setImageWithURL(tweet?.imageUrl)
-//                realNameLabel.text = tweet?.user!.name
-//            }
-////            
-//            if tweet?.favourited == true {
-//                favouritedLabel.text = "favorited"
-//            } else {
-//                favouritedLabel.hidden = true
-//            }
-////
-//            if tweet?.retweeted == true {
-//                retweetedLabel.text = "retweeted"
-//            } else {
-//                retweetedLabel.hidden = true
-//            }
+            let timestamp = tweet?.createdAt!
+            timestampLabel.text = timestamp! as? String
+            
+            if tweet?.user != nil {
+                nameLabel.text = tweet!.user!.name!
+                handleLabel.text = (tweet!.user!.Screenname!) 
+                var imageUrl: NSURL = NSURL(string: tweet!.user!.profileImageUrl!)!
+               // profileImageview.setImageWithURL(, 					placeholderImage: nil)
+                profileImageview.setImageWithURL(imageUrl, placeholderImage: nil)
+                nameLabel.text = tweet?.user!.name
+            }
+          
+            if tweet?.favourited == true {
+                favourited.text = "favorited"
+            } else {
+                favourited.hidden = true
+            }
+
+            if tweet?.retweeted == true {
+                reTweeted.text = "retweeted"
+            } else {
+                reTweeted.hidden = true
+            }
         }
     }
     
