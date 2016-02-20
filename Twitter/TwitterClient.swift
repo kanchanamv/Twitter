@@ -49,7 +49,7 @@ class TwitterClient: BDBOAuth1SessionManager {
         
         GET("1.1/statuses/home_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask?, response: AnyObject?) -> Void in
             print("success!")
-            var tweets = Tweet.TweetsWithArray(response as! [NSDictionary])
+            let tweets = Tweet.TweetsWithArray(response as! [NSDictionary])
             Tweet.tweetsTimeline = tweets
             print(Tweet.tweetsTimeline)
             completion(tweets: tweets, error: nil)
@@ -66,7 +66,7 @@ class TwitterClient: BDBOAuth1SessionManager {
             TwitterClient.sharedInstance.requestSerializer.saveAccessToken(accessToken)
             TwitterClient.sharedInstance.GET( "1.1/account/verify_credentials.json", parameters: nil, success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
                 //  print("user: \(response)")
-                var user = User(dictionary: response as! NSDictionary)
+                let user = User(dictionary: response as! NSDictionary)
                 User.currentUser = user
                 print(user)
                 self.loginCompletion?(user: user, error: nil)

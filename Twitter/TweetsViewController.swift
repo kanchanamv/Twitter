@@ -26,7 +26,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func getTimelineTweets() {
         TwitterClient.sharedInstance.homeTimelineWithCompletion(nil, completion: { (tweets, error) -> () in
-            self.tweets = tweets
+            var tempTweets : [Tweet]! = tweets
+            tempTweets.sortInPlace {$0.createdAt!.compare($1.createdAt!) == .OrderedDescending}
+            let n = max(20, tempTweets.count)
+            self.tweets = Array(tempTweets.prefix(n))
             self.tableView.reloadData()
         })
     }
@@ -44,14 +47,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let availableTweetsCount = max(20, self.tweets!.count)
         
-        let cell =  tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
-        
-        if(indexPath.row <= availableTweetsCount){
-            self.tweets.sortInPlace {$0.createdAt!.compare($1.createdAt!) == .OrderedDescending};
-            cell.tweet = self.tweets[indexPath.row]
-        }
+        let cell =  tableView
+            .dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
+        self.tweets.sortInPlace {$0.createdAt!.compare($1.createdAt!) == .OrderedDescending};
+        cell.tweet = self.tweets[indexPath.row]
         return cell
     }
     
