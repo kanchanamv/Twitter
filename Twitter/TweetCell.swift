@@ -23,8 +23,9 @@ class TweetCell: UITableViewCell {
         didSet {
             tweetTextLabel.text = tweet?.text
             
-            let timestamp = tweet?.createdAt!
-            timestampLabel.text = timestamp! as? String
+           // let timestamp = tweet?.createdAt!
+            timestampLabel.text = tweet?.createdAtString
+                //timestamp! as? String
             
             if tweet?.user != nil {
                 nameLabel.text = tweet!.user!.name!
@@ -52,6 +53,17 @@ class TweetCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profileImageview.layer.cornerRadius = 5
+        profileImageview.clipsToBounds = true
+        
+        tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        nameLabel.preferredMaxLayoutWidth   = nameLabel.frame.size.width
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
