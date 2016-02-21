@@ -40,16 +40,35 @@ class TweetDetailsViewController: UIViewController {
     
     @IBAction func retweetOnClicked(sender: AnyObject) {
         let id : Int64 = Int64(self.tweet.id)!
-        TwitterClient.sharedInstance.retweet(id)
+        TwitterClient.sharedInstance.retweet(id,
+            completion: { (retweeted) -> () in
+                if(retweeted == true) {
+                    self.tweet.retweeted = true
+                    self.tweet.retweetCount! += 1
+                }
+                else{
+                    self.tweet.retweeted = false
+                }
+        })
+        self.tweet.retweetCount! += 1
     }
 
     @IBAction func favoriteOnClicked(sender: AnyObject) {
         let id : Int64 = Int64(self.tweet.id)!
-        TwitterClient.sharedInstance.favorite(id)
+        TwitterClient.sharedInstance.favorite(id,
+            completion: { (favorited) -> () in
+                if(favorited == true) {
+                    self.tweet.favourited = true
+                    self.tweet.favouriteCount! += 1
+                }
+                else{
+                    self.tweet.favourited = false
+                }
+            })       
     }
     
     @IBAction func replyOnClicked(sender: AnyObject) {
-        TwitterClient.sharedInstance.reply(detailsTextView.text, id: "\(self.tweet.id)")
+        TwitterClient.sharedInstance.tweet(detailsTextView.text, id: "\(self.tweet.id)")
     }
     
 }

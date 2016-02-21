@@ -29,20 +29,20 @@ class TweetCell: UITableViewCell {
             if tweet?.user != nil {
                 nameLabel.text = tweet!.user!.name!
                 handleLabel.text = (tweet!.user!.Screenname!) 
-                var imageUrl: NSURL = NSURL(string: tweet!.user!.profileImageUrl!)!
+                let imageUrl: NSURL = NSURL(string: tweet!.user!.profileImageUrl!)!
                // profileImageview.setImageWithURL(, 					placeholderImage: nil)
                 profileImageview.setImageWithURL(imageUrl, placeholderImage: nil)
                 nameLabel.text = tweet?.user!.name
             }
           
-            if tweet?.favourited == true {
-                favourited.text = "favorited"
+            if tweet?.favouriteCount != nil {
+                favourited.text = "fav: \(tweet!.favouriteCount!)"
             } else {
                 favourited.hidden = true
             }
 
-            if tweet?.retweeted == true {
-                reTweeted.text = "retweeted"
+            if tweet?.retweetCount != nil {
+                reTweeted.text = "retw: \(tweet!.retweetCount!)"
             } else {
                 reTweeted.hidden = true
             }
