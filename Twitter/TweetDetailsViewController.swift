@@ -20,6 +20,8 @@ class TweetDetailsViewController: UIViewController {
     @IBOutlet weak var detailsReplyButton: UIButton!
     @IBOutlet weak var detailsFavouriteButton: UIButton!
     
+    @IBOutlet weak var detailsTweetLabel: UILabel!
+    
     var tweet : Tweet!
     
     override func viewDidLoad() {
@@ -27,10 +29,8 @@ class TweetDetailsViewController: UIViewController {
         detailsHandleLabel.text = tweet.user?.Screenname
         detailsImageView.setImageWithURL(NSURL(string: tweet!.user!.profileImageUrl!)!, placeholderImage: nil)
         detailsNameLabel.text = tweet.user?.name
-        detailsTextView.text = tweet.text
-       // detailsFavouriteButton
-        
-        // Do any additional setup after loading the view.
+        detailsTweetLabel.text = tweet.text
+        detailsTextView.text = tweet.user?.Screenname!
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,15 +38,18 @@ class TweetDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func retweetOnClicked(sender: AnyObject) {
+        let id : Int64 = Int64(self.tweet.id)!
+        TwitterClient.sharedInstance.retweet(id)
     }
-    */
 
+    @IBAction func favoriteOnClicked(sender: AnyObject) {
+        let id : Int64 = Int64(self.tweet.id)!
+        TwitterClient.sharedInstance.favorite(id)
+    }
+    
+    @IBAction func replyOnClicked(sender: AnyObject) {
+        TwitterClient.sharedInstance.reply(detailsTextView.text, id: "\(self.tweet.id)")
+    }
+    
 }

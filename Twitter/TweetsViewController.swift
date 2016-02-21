@@ -67,8 +67,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
        var tweet = tweets[indexPath!.row]
         var vc = segue.destinationViewController as! TweetDetailsViewController
        // var vc = nvc.topViewController as! TweetDetailsViewController
-        cell.tweet = self.tweets[indexPath!.row]
-        print(cell.tweet)
+        //cell.tweet = self.tweets[indexPath!.row]
+        //print(cell.tweet)
        // println("setting tweet on segue")
         vc.tweet = tweet
   //      print(tweet!)
