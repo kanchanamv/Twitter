@@ -31,6 +31,8 @@ class TweetDetailsViewController: UIViewController {
         detailsNameLabel.text = tweet.user?.name
         detailsTweetLabel.text = tweet.text
         detailsTextView.text = tweet.user?.Screenname!
+        
+        navigationController?.navigationBar.tintColor = UIColor.blackColor()
     }
 
     override func didReceiveMemoryWarning() {

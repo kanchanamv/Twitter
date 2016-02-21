@@ -100,6 +100,12 @@ class TwitterClient: BDBOAuth1SessionManager {
 		POST("1.1/statuses/update.json",
 			parameters: params,
 			success: { (operation: NSURLSessionDataTask, response: AnyObject?) -> Void in
+//                if(id == nil) {
+//                    params["user"] = User.currentUser
+//                    
+//                    let myTweet: Tweet = Tweet(dictionary: params)
+//                    Tweet.
+                //}
 			},
 			failure: { (operation: NSURLSessionDataTask?, error: NSError?) -> Void in
 			}

@@ -18,7 +18,9 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var profileImageview: UIImageView!
    // @IBOutlet weak var favouritedLabel: UILabel!
+    @IBOutlet weak var retweetImageView: UIImageView!
     
+    @IBOutlet weak var favouriteImage: UIImageView!
     var tweet: Tweet? {
         didSet {
             tweetTextLabel.text = tweet?.text
@@ -34,16 +36,20 @@ class TweetCell: UITableViewCell {
                // profileImageview.setImageWithURL(, 					placeholderImage: nil)
                 profileImageview.setImageWithURL(imageUrl, placeholderImage: nil)
                 nameLabel.text = tweet?.user!.name
+                favouriteImage.image = UIImage(named: "heartImage")
+                retweetImageView.image = UIImage(named: "greyRetweet")
+               
+
             }
           
             if tweet?.favouriteCount != nil {
-                favourited.text = "f: \(tweet!.favouriteCount!)"
+                favourited.text = "\(tweet!.favouriteCount!)"
             } else {
                 favourited.hidden = true
             }
 
             if tweet?.retweetCount != nil {
-                reTweeted.text = "r: \(tweet!.retweetCount!)"
+                reTweeted.text = "\(tweet!.retweetCount!)"
             } else {
                 reTweeted.hidden = true
             }
@@ -58,11 +64,12 @@ class TweetCell: UITableViewCell {
         profileImageview.clipsToBounds = true
         
         tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
+         nameLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+         tweetTextLabel.preferredMaxLayoutWidth = tweetTextLabel.frame.size.width
         nameLabel.preferredMaxLayoutWidth   = nameLabel.frame.size.width
     }
 

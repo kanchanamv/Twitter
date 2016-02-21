@@ -20,6 +20,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
+        
 
 		tableView.delegate = self
 		tableView.dataSource = self
@@ -33,6 +34,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 		getTimelineTweets()
 	}
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
 
 	func getTimelineTweets() {
 		TwitterClient.sharedInstance.homeTimelineWithCompletion(nil,
