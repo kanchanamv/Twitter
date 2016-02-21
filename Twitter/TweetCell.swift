@@ -24,7 +24,7 @@ class TweetCell: UITableViewCell {
             tweetTextLabel.text = tweet?.text
             
            // let timestamp = tweet?.createdAt!
-            timestampLabel.text = tweet?.createdAtString
+           // timestampLabel.text = tweet?.createdAtString
                 //timestamp! as? String
             
             if tweet?.user != nil {
@@ -37,13 +37,13 @@ class TweetCell: UITableViewCell {
             }
           
             if tweet?.favouriteCount != nil {
-                favourited.text = "fav: \(tweet!.favouriteCount!)"
+                favourited.text = "f: \(tweet!.favouriteCount!)"
             } else {
                 favourited.hidden = true
             }
 
             if tweet?.retweetCount != nil {
-                reTweeted.text = "retw: \(tweet!.retweetCount!)"
+                reTweeted.text = "r: \(tweet!.retweetCount!)"
             } else {
                 reTweeted.hidden = true
             }
