@@ -16,9 +16,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         let menuItems = ["Profile","Timeline","Mentions","Logout"]
     
-    private var profileViewController: UIViewController!
-    private var mentionsViewController: UIViewController!
-    private var timelineViewController: UIViewController!
+    private var profileNavigationController: UIViewController!
+    private var mentionsNavigationController: UIViewController!
+    private var timelineNavigationController: UIViewController!
+    private var loginNavigationController: UIViewController!
     
     var viewControllers: [UIViewController] = []
 
@@ -32,14 +33,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         menuTableView.dataSource = self
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      //  profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
-        mentionsViewController = storyboard.instantiateViewControllerWithIdentifier("MentionsNavigationController")
-         viewControllers.append(mentionsViewController)
-        timelineViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllertoTweets")
-       
-        viewControllers.append (timelineViewController)
-        
-
+        profileNavigationController = storyboard.instantiateViewControllerWithIdentifier("ProfileNavigationController")
+        viewControllers.append(profileNavigationController)
+        timelineNavigationController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllertoTweets")
+        viewControllers.append (timelineNavigationController)
+        mentionsNavigationController = storyboard.instantiateViewControllerWithIdentifier("mentionsNavigationController")
+         viewControllers.append(mentionsNavigationController)
+       //        loginNavigationController = storyboard.instantiateViewControllerWithIdentifier("LoginNavigationController")
+//        viewControllers.append(loginNavigationController)
+//        
         // Do any additional setup after loading the view.
     }
 
@@ -51,7 +53,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print (menuItems.count)
-        return 2
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
