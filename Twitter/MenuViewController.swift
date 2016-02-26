@@ -11,11 +11,33 @@ import UIKit
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var menuTableView: UITableView!
+     
+    
+    
+        let menuItems = ["Profile","Timeline","Mentions","Logout"]
+    
+    private var profileViewController: UIViewController!
+    private var mentionsViewController: UIViewController!
+    private var timelineViewController: UIViewController!
+    
+    var viewControllers: [UIViewController] = []
+
+    
+    var hamburgerViewController: HamburgerViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      //  profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
+        mentionsViewController = storyboard.instantiateViewControllerWithIdentifier("MentionsNavigationController")
+         viewControllers.append(mentionsViewController)
+        timelineViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllertoTweets")
+       
+        viewControllers.append (timelineViewController)
         
 
         // Do any additional setup after loading the view.
@@ -28,15 +50,24 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        print (menuItems.count)
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView
             .dequeueReusableCellWithIdentifier("MenuViewCell", forIndexPath: indexPath) as! MenuViewCell
+        
+        
+        cell.menuItemLabel.text = menuItems[indexPath.row]
+        print(cell.menuItemLabel.text)
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        hamburgerViewController.contentViewController = viewControllers[indexPath.row]
+    }
     /*
     // MARK: - Navigation
 

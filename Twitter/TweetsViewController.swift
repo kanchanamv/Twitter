@@ -17,9 +17,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var composeTweetButton: UIBarButtonItem!
 	@IBOutlet weak var tableView: UITableView!
-     @IBOutlet weak var leftMarginConstraing: NSLayoutConstraint!
-    var originalLeftMargin: CGFloat!
-    
+      
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -32,8 +30,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl.addTarget(self, action: "didRefresh", forControlEvents: .ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
         
-        let navBarColor = navigationController!.navigationBar
-        navBarColor.barTintColor = UIColor(red:  0/255.0, green: 132/255.0, blue: 237.0/255.0, alpha: 100.0/100.0)
+//        let navBarColor = navigationController!.navigationBar
+//        navBarColor.barTintColor = UIColor(red:  0/255.0, green: 132/255.0, blue: 237.0/255.0, alpha: 100.0/100.0)
 
 		getTimelineTweets()
 	}
@@ -91,29 +89,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		return cell
 	}
 
-    @IBAction func onPanGesture(sender: UIPanGestureRecognizer) {
-        let translation = sender.translationInView(view)
-        let velocity = sender.velocityInView(view)
-        let point = sender.locationInView(view)
-        
-        if sender.state == UIGestureRecognizerState.Began {
-            originalLeftMargin = leftMarginConstraing.constant
-            
-            print("Gesture began at: \(point)")
-        } else if sender.state == UIGestureRecognizerState.Changed {
-            leftMarginConstraing.constant = originalLeftMargin + translation.x
-            print("Gesture changed at: \(point)")
-        } else if sender.state == UIGestureRecognizerState.Ended {
-            
-            if velocity.x > 0 {
-            leftMarginConstraing.constant = view.frame.size.width - 50}
-            else {
-                leftMarginConstraing.constant = 0
-            }
-            print("Gesture ended at: \(point)")
-        }
-    }
-	override func didReceiveMemoryWarning() {
+   	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
