@@ -30,8 +30,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl.addTarget(self, action: "didRefresh", forControlEvents: .ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
         
-//        let navBarColor = navigationController!.navigationBar
-//        navBarColor.barTintColor = UIColor(red:  0/255.0, green: 132/255.0, blue: 237.0/255.0, alpha: 100.0/100.0)
+        let navBarColor = navigationController!.navigationBar
+        navBarColor.barTintColor = UIColor(red:  0/255.0, green: 132/255.0, blue: 237.0/255.0, alpha: 100.0/100.0)
 
 		getTimelineTweets()
 	}

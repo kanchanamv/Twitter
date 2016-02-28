@@ -111,6 +111,26 @@ class TwitterClient: BDBOAuth1SessionManager {
 			}
 		)
 	}
+    
+    func mentions(params: NSDictionary?, completion: (mentions: [Tweet]?, error: NSError?) -> ())
+    {
+        GET("1.1/statuses/mentions_timeline.json",
+            parameters: params,
+            success: { (operation: NSURLSessionDataTask?, response: AnyObject?) -> Void in
+                print("success!")
+                let mentions = Tweet.MentionsWithArray(response as! [NSDictionary])
+                Tweet.mentionsTimeline = mentions
+                print("inside mentions")
+               // print(Tweet.mentionsTimeline)
+                completion(mentions: mentions, error: nil)
+            },
+            failure: { (operation: NSURLSessionDataTask?, error: NSError?) -> Void in
+                print("fail")
+                completion(mentions: nil, error: error)
+        })
+    }
+    
+
 
 	func openURL(url: NSURL) {
 		TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in

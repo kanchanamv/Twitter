@@ -9,6 +9,7 @@
 import UIKit
 
 var _tweetsInTimeline : [Tweet]?
+var _mentionsTimeline : [Tweet]?
 
 class Tweet: NSObject {
     
@@ -51,6 +52,15 @@ class Tweet: NSObject {
         return tweets
     }
     
+    class func MentionsWithArray(array: [NSDictionary]) -> [Tweet] {
+        var tweets = [Tweet]()
+        for dictionary in array {
+            let tweet = Tweet(dictionary: dictionary)
+            tweets.append(tweet)
+        }
+        return tweets
+    }
+    
     class var tweetsTimeline: [Tweet]?
     {
         get {
@@ -58,6 +68,15 @@ class Tweet: NSObject {
         }
         set(tweets){
             _tweetsInTimeline = tweets
+        }
+    }
+    class var mentionsTimeline: [Tweet]?
+        {
+        get {
+        return _mentionsTimeline
+        }
+        set(tweets){
+            _mentionsTimeline = tweets
         }
     }
 }
