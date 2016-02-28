@@ -27,7 +27,7 @@ class HamburgerViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	//	_globalNavigationController = self
+		_globalNavigationController = self
 
 		// Do any additional setup after loading the view.
 	}

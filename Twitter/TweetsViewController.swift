@@ -32,6 +32,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let navBarColor = navigationController!.navigationBar
         navBarColor.barTintColor = UIColor(red:  0/255.0, green: 132/255.0, blue: 237.0/255.0, alpha: 100.0/100.0)
+        
 
 		getTimelineTweets()
 	}
@@ -88,11 +89,13 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		cell.tweet = self.tweets[indexPath.row]
 		return cell
 	}
+    
 
    	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+ 
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 

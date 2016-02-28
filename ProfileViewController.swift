@@ -17,35 +17,25 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var followingCountLabel: UILabel!
 	@IBOutlet weak var followersCountLabel: UILabel!
 
-//    var user: User! {
-//        didSet {
-//            if (user != nil){
-//                if (user!.profileImageUrl != nil)
-//            {
-//               //                self.title = user!.name
-//                print("in userprofile")
-//            }
-//            }
-//            else {print("on the else block")}
-//        }
-//    }
+	var profile: User! {
+		didSet {
+            view.layoutIfNeeded() 
+			let profileImageUrl: NSURL = NSURL(string: profile!.profileImageUrl!)!
+			profileImageView.setImageWithURL(profileImageUrl, placeholderImage: nil)
+			tweetsCountLabel.text = "\(profile!.tweetsCount!)"
+			followersCountLabel.text = "\(profile!.followersCount!)"
+			followingCountLabel.text = "\(profile!.followingCount!)"
+		}
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
-        let user : User? = User.currentUser
-        
-        if(user != nil){
-            let profileImageUrl: NSURL = NSURL(string: user!.profileImageUrl!)!
-            profileImageView.setImageWithURL(profileImageUrl, placeholderImage: nil)
-            tweetsCountLabel.text = "\(user!.tweetsCount!)"
-            followersCountLabel.text = "\(user!.followersCount!)"
-            followingCountLabel.text = "\(user!.followingCount!)"
-        }
-
-		
-
 		// Do any additional setup after loading the view.
+		// let user : User? = User.currentUser
+
+//		if (profile == nil) {
+//			profile = User.currentUser
+		//}
 	}
 
 	override func didReceiveMemoryWarning() {

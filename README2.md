@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 - [x] The menu should include links to your profile, the home timeline, and the mentions view.
 - [ ] The menu can look similar to the example or feel free to take liberty with the UI.
 - [ ] Profile page
-- [ ] Contains the user header view
+- [x] Contains the user header view
 - [x] Contains a section with the users basic stats: # tweets, # following, # followers
 - [x] Home Timeline
 - [ ] Tapping on a user image should bring up that user's profile page
