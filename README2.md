@@ -43,7 +43,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough] (Twitter Homework 4 Video Walkthrough.gif)
+![Video Walkthrough] (Twitter.Homework.4.Video.Walkthrough.gif)
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
