@@ -25,10 +25,6 @@ class MentionsCell: UITableViewCell {
         didSet {
             mentionsTextLabel.text = mention?.text
             
-            // let timestamp = tweet?.createdAt!
-            // timestampLabel.text = tweet?.createdAtString
-            //timestamp! as? String
-            
             if mention?.user != nil {
                 nameLabel.text = mention!.user!.name!
                 handleLabel.text = (mention!.user!.Screenname!)
@@ -43,13 +39,13 @@ class MentionsCell: UITableViewCell {
             }
             
             if mention?.favouriteCount != nil {
-                favourited.text = "\(mention!.favouriteCount!)"
+                favourited.text = "\(mention!.favouriteCount!) Favourites"
             } else {
                 favourited.hidden = true
             }
             
             if mention?.retweetCount != nil {
-                reTweeted.text = "\(mention!.retweetCount!)"
+                reTweeted.text = "\(mention!.retweetCount!) Retweets"
             } else {
                 reTweeted.hidden = true
             }

@@ -21,7 +21,12 @@ class HamburgerViewController: UIViewController {
     var menuViewController: UIViewController!{
         didSet{
         view.layoutIfNeeded()
-        menuView.addSubview(menuViewController.view)
+       // menuView.addSubview(menuViewController.view)
+            
+            menuViewController.view.frame = self.menuView.bounds
+            menuViewController.willMoveToParentViewController(self)
+            menuView.addSubview(menuViewController.view)
+            menuViewController.didMoveToParentViewController(self)
         }
     }
 
@@ -49,29 +54,29 @@ class HamburgerViewController: UIViewController {
 //	}
 
 	var contentViewController: UIViewController! {
-		didSet {
+		didSet (oldContentViewController) {
 			view.layoutIfNeeded()
             
-            contentView.addSubview(contentViewController.view)
+           // contentView.addSubview(contentViewController.view)
 
-//			if (oldContentViewController != nil) {
-//				oldContentViewController.willMoveToParentViewController(nil)
-//				oldContentViewController.view.removeFromSuperview()
-//				oldContentViewController.didMoveToParentViewController(nil)
-//			}
-//
-//			self.addChildViewController(contentViewController)
-//			contentViewController.view.frame = self.contentView.bounds
-//			contentViewController.view.autoresizingMask = [.FlexibleHeight, .FlexibleTopMargin, .FlexibleBottomMargin]
-//			contentViewController.willMoveToParentViewController(self)
-//			contentView.addSubview(contentViewController.view)
-//
-//            UIView.animateWithDuration(0.5, animations: {
-//                self.leftMarginConstraing.constant = 0
-//                self.view.layoutIfNeeded()
-//            })
-//
-//			contentViewController.didMoveToParentViewController(self)
+			if (oldContentViewController != nil) {
+				oldContentViewController.willMoveToParentViewController(nil)
+				oldContentViewController.view.removeFromSuperview()
+				oldContentViewController.didMoveToParentViewController(nil)
+			}
+
+			self.addChildViewController(contentViewController)
+			contentViewController.view.frame = self.contentView.bounds
+			contentViewController.view.autoresizingMask = [.FlexibleHeight, .FlexibleTopMargin, .FlexibleBottomMargin]
+			contentViewController.willMoveToParentViewController(self)
+			contentView.addSubview(contentViewController.view)
+
+            UIView.animateWithDuration(0.5, animations: {
+                self.leftMarginConstraing.constant = 0
+                self.view.layoutIfNeeded()
+            })
+
+			contentViewController.didMoveToParentViewController(self)
 		}
 	}
 

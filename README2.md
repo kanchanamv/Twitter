@@ -9,12 +9,12 @@ The following **required** functionality is completed:
 - [x] Hamburger menu
 - [x] Dragging anywhere in the view should reveal the menu.
 - [x] The menu should include links to your profile, the home timeline, and the mentions view.
-- [ ] The menu can look similar to the example or feel free to take liberty with the UI.
-- [ ] Profile page
+- [x] The menu can look similar to the example or feel free to take liberty with the UI.
+- [x] Profile page
 - [x] Contains the user header view
 - [x] Contains a section with the users basic stats: # tweets, # following, # followers
 - [x] Home Timeline
-- [ ] Tapping on a user image should bring up that user's profile page
+- [x] Tapping on a user image should bring up that user's profile page
 
 The following **optional** features are implemented:
 
@@ -43,7 +43,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough] (Twitter Homework 4 Video Walkthrough.gif)
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

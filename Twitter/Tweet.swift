@@ -21,6 +21,7 @@ class Tweet: NSObject {
     var retweetCount: Int?
     var createdAtString: String?
     var createdAt: NSDate?
+    var biodescription: String?
     var dictionary: NSDictionary?
     var id: String
     
@@ -33,6 +34,7 @@ class Tweet: NSObject {
         retweeted = dictionary["retweeted"] as? Bool
         retweetCount = dictionary["retweet_count"] as? Int
         createdAtString = dictionary["created_at"] as? String
+        biodescription = dictionary["description"] as? String
         id = dictionary["id_str"] as! String
         
         

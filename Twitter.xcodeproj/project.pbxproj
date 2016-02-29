@@ -28,6 +28,7 @@
 		84FC54371C810EC300C50C4F /* README2.md in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54361C810EC300C50C4F /* README2.md */; };
 		84FC54391C8127F100C50C4F /* MentionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54381C8127F100C50C4F /* MentionsCell.swift */; };
 		84FC543F1C81864300C50C4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC543E1C81864300C50C4F /* ProfileViewController.swift */; };
+		84FC54421C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */; };
 		A65A21F4AB6A5695E7CA7699 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079AD355B922E12627FCEB84 /* Pods_Twitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		84FC54361C810EC300C50C4F /* README2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README2.md; sourceTree = "<group>"; };
 		84FC54381C8127F100C50C4F /* MentionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsCell.swift; sourceTree = "<group>"; };
 		84FC543E1C81864300C50C4F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Twitter Homework 4 Video Walkthrough.gif"; path = "../Twitter Homework 4 Video Walkthrough.gif"; sourceTree = "<group>"; };
 		A808B0D812793AB7F161364A /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		84F8D0381C7511E300E24289 = {
 			isa = PBXGroup;
 			children = (
+				84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */,
 				845E9CC31C7AE3F500B53B17 /* Twitter Homework 3 Video Walkthrough.gif */,
 				84F8D05B1C753E9300E24289 /* README.md */,
 				84FC54361C810EC300C50C4F /* README2.md */,
@@ -223,6 +226,7 @@
 			files = (
 				84F8D04F1C7511E300E24289 /* LaunchScreen.storyboard in Resources */,
 				845E9CC41C7AE3F500B53B17 /* Twitter Homework 3 Video Walkthrough.gif in Resources */,
+				84FC54421C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif in Resources */,
 				84F8D04C1C7511E300E24289 /* Assets.xcassets in Resources */,
 				84F8D04A1C7511E300E24289 /* Main.storyboard in Resources */,
 			);

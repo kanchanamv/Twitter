@@ -10,8 +10,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-	weak var navigationDelegate: AnyObject?
-
 	@IBOutlet weak var profileImageView: UIImageView!
 	@IBOutlet weak var tweetsCountLabel: UILabel!
 	@IBOutlet weak var followingCountLabel: UILabel!

@@ -117,10 +117,10 @@ class TwitterClient: BDBOAuth1SessionManager {
         GET("1.1/statuses/mentions_timeline.json",
             parameters: params,
             success: { (operation: NSURLSessionDataTask?, response: AnyObject?) -> Void in
-                print("success!")
+               // print("success!")
                 let mentions = Tweet.MentionsWithArray(response as! [NSDictionary])
                 Tweet.mentionsTimeline = mentions
-                print("inside mentions")
+               // print("inside mentions")
                // print(Tweet.mentionsTimeline)
                 completion(mentions: mentions, error: nil)
             },

@@ -25,10 +25,6 @@ class TweetCell: UITableViewCell {
 		didSet {
 			tweetTextLabel.text = tweet?.text
 
-			// let timestamp = tweet?.createdAt!
-			// timestampLabel.text = tweet?.createdAtString
-			// timestamp! as? String
-
 			if tweet?.user != nil {
 				nameLabel.text = tweet!.user!.name!
 				handleLabel.text = (tweet!.user!.Screenname!)
