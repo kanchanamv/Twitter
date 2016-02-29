@@ -14,20 +14,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let hamburgerViewController = window!.rootViewController as! HamburgerViewController
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         
-//        if User.currentUser != nil
-//        {
-//            print("current user detected: \(User.currentUser?.name)")
-//            
-//            var vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
-//            
-//            window?.rootViewController = vc
-//        }
+        menuViewController.hamburgerViewController = hamburgerViewController
+        hamburgerViewController.menuViewController = menuViewController
+        
+
+        
+        if User.currentUser != nil
+        {
+            print("current user detected: \(User.currentUser?.name)")
+            
+            //  var vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController")
+            hamburgerViewController.contentViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationControllertoTweets")
+            
+            //  window?.rootViewController = vc
+        }
+        else
+        {
+            hamburgerViewController.contentViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        }
+        
+               // let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        
+        
         return true
     }
 

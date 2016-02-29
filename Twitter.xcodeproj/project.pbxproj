@@ -23,6 +23,12 @@
 		84F8D0691C78EA1D00E24289 /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8D0681C78EA1D00E24289 /* TweetDetailsViewController.swift */; };
 		84FC542D1C7F7A2000C50C4F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC542C1C7F7A2000C50C4F /* MenuViewController.swift */; };
 		84FC542F1C7F80CD00C50C4F /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC542E1C7F80CD00C50C4F /* MenuViewCell.swift */; };
+		84FC54311C7FB07F00C50C4F /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54301C7FB07F00C50C4F /* HamburgerViewController.swift */; };
+		84FC54351C7FC33000C50C4F /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54341C7FC33000C50C4F /* MentionsViewController.swift */; };
+		84FC54371C810EC300C50C4F /* README2.md in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54361C810EC300C50C4F /* README2.md */; };
+		84FC54391C8127F100C50C4F /* MentionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC54381C8127F100C50C4F /* MentionsCell.swift */; };
+		84FC543F1C81864300C50C4F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC543E1C81864300C50C4F /* ProfileViewController.swift */; };
+		84FC54421C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */; };
 		A65A21F4AB6A5695E7CA7699 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079AD355B922E12627FCEB84 /* Pods_Twitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,12 @@
 		84F8D0681C78EA1D00E24289 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
 		84FC542C1C7F7A2000C50C4F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		84FC542E1C7F80CD00C50C4F /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		84FC54301C7FB07F00C50C4F /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HamburgerViewController.swift; path = ../HamburgerViewController.swift; sourceTree = "<group>"; };
+		84FC54341C7FC33000C50C4F /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
+		84FC54361C810EC300C50C4F /* README2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README2.md; sourceTree = "<group>"; };
+		84FC54381C8127F100C50C4F /* MentionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsCell.swift; sourceTree = "<group>"; };
+		84FC543E1C81864300C50C4F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "Twitter Homework 4 Video Walkthrough.gif"; path = "../Twitter Homework 4 Video Walkthrough.gif"; sourceTree = "<group>"; };
 		A808B0D812793AB7F161364A /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,8 +85,10 @@
 		84F8D0381C7511E300E24289 = {
 			isa = PBXGroup;
 			children = (
+				84FC54411C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif */,
 				845E9CC31C7AE3F500B53B17 /* Twitter Homework 3 Video Walkthrough.gif */,
 				84F8D05B1C753E9300E24289 /* README.md */,
+				84FC54361C810EC300C50C4F /* README2.md */,
 				84F8D0431C7511E300E24289 /* Twitter */,
 				84F8D0421C7511E300E24289 /* Products */,
 				D2F3E2AFB76439AF5A0AA06E /* Pods */,
@@ -93,16 +107,13 @@
 		84F8D0431C7511E300E24289 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				84FC54401C81864B00C50C4F /* View Controllers */,
 				84F8D05F1C7652B700E24289 /* Models */,
 				84F8D0561C75128800E24289 /* API */,
 				84F8D0441C7511E300E24289 /* AppDelegate.swift */,
-				84F8D0461C7511E300E24289 /* ViewController.swift */,
+				84FC54381C8127F100C50C4F /* MentionsCell.swift */,
 				84F8D0481C7511E300E24289 /* Main.storyboard */,
 				84FC542E1C7F80CD00C50C4F /* MenuViewCell.swift */,
-				84F8D0681C78EA1D00E24289 /* TweetDetailsViewController.swift */,
-				84FC542C1C7F7A2000C50C4F /* MenuViewController.swift */,
-				845E9CBF1C798C4200B53B17 /* ComposeViewController.swift */,
-				84F8D0641C77689E00E24289 /* TweetsViewController.swift */,
 				84F8D0661C779EFE00E24289 /* TweetCell.swift */,
 				84F8D04B1C7511E300E24289 /* Assets.xcassets */,
 				84F8D04D1C7511E300E24289 /* LaunchScreen.storyboard */,
@@ -126,6 +137,21 @@
 				84F8D0621C7652DD00E24289 /* Tweet.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		84FC54401C81864B00C50C4F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84FC54341C7FC33000C50C4F /* MentionsViewController.swift */,
+				84FC54301C7FB07F00C50C4F /* HamburgerViewController.swift */,
+				84F8D0461C7511E300E24289 /* ViewController.swift */,
+				845E9CBF1C798C4200B53B17 /* ComposeViewController.swift */,
+				84F8D0641C77689E00E24289 /* TweetsViewController.swift */,
+				84F8D0681C78EA1D00E24289 /* TweetDetailsViewController.swift */,
+				84FC542C1C7F7A2000C50C4F /* MenuViewController.swift */,
+				84FC543E1C81864300C50C4F /* ProfileViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		D2F3E2AFB76439AF5A0AA06E /* Pods */ = {
@@ -200,6 +226,7 @@
 			files = (
 				84F8D04F1C7511E300E24289 /* LaunchScreen.storyboard in Resources */,
 				845E9CC41C7AE3F500B53B17 /* Twitter Homework 3 Video Walkthrough.gif in Resources */,
+				84FC54421C8409F700C50C4F /* Twitter Homework 4 Video Walkthrough.gif in Resources */,
 				84F8D04C1C7511E300E24289 /* Assets.xcassets in Resources */,
 				84F8D04A1C7511E300E24289 /* Main.storyboard in Resources */,
 			);
@@ -262,16 +289,21 @@
 			files = (
 				84F8D0471C7511E300E24289 /* ViewController.swift in Sources */,
 				84F8D0581C7512A100E24289 /* TwitterClient.swift in Sources */,
+				84FC54311C7FB07F00C50C4F /* HamburgerViewController.swift in Sources */,
 				84F8D0611C7652CF00E24289 /* User.swift in Sources */,
 				84F8D0671C779EFE00E24289 /* TweetCell.swift in Sources */,
 				84FC542D1C7F7A2000C50C4F /* MenuViewController.swift in Sources */,
 				84FC542F1C7F80CD00C50C4F /* MenuViewCell.swift in Sources */,
+				84FC543F1C81864300C50C4F /* ProfileViewController.swift in Sources */,
+				84FC54351C7FC33000C50C4F /* MentionsViewController.swift in Sources */,
 				84F8D0691C78EA1D00E24289 /* TweetDetailsViewController.swift in Sources */,
 				845E9CC01C798C4200B53B17 /* ComposeViewController.swift in Sources */,
+				84FC54391C8127F100C50C4F /* MentionsCell.swift in Sources */,
 				84F8D05C1C753E9300E24289 /* README.md in Sources */,
 				84F8D0651C77689E00E24289 /* TweetsViewController.swift in Sources */,
 				84F8D0451C7511E300E24289 /* AppDelegate.swift in Sources */,
 				84F8D0631C7652DD00E24289 /* Tweet.swift in Sources */,
+				84FC54371C810EC300C50C4F /* README2.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -372,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,6 +9,7 @@
 import UIKit
 
 var _tweetsInTimeline : [Tweet]?
+var _mentionsTimeline : [Tweet]?
 
 class Tweet: NSObject {
     
@@ -20,6 +21,7 @@ class Tweet: NSObject {
     var retweetCount: Int?
     var createdAtString: String?
     var createdAt: NSDate?
+    var biodescription: String?
     var dictionary: NSDictionary?
     var id: String
     
@@ -32,6 +34,7 @@ class Tweet: NSObject {
         retweeted = dictionary["retweeted"] as? Bool
         retweetCount = dictionary["retweet_count"] as? Int
         createdAtString = dictionary["created_at"] as? String
+        biodescription = dictionary["description"] as? String
         id = dictionary["id_str"] as! String
         
         
@@ -51,6 +54,15 @@ class Tweet: NSObject {
         return tweets
     }
     
+    class func MentionsWithArray(array: [NSDictionary]) -> [Tweet] {
+        var tweets = [Tweet]()
+        for dictionary in array {
+            let tweet = Tweet(dictionary: dictionary)
+            tweets.append(tweet)
+        }
+        return tweets
+    }
+    
     class var tweetsTimeline: [Tweet]?
     {
         get {
@@ -58,6 +70,15 @@ class Tweet: NSObject {
         }
         set(tweets){
             _tweetsInTimeline = tweets
+        }
+    }
+    class var mentionsTimeline: [Tweet]?
+        {
+        get {
+        return _mentionsTimeline
+        }
+        set(tweets){
+            _mentionsTimeline = tweets
         }
     }
 }
